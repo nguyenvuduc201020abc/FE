@@ -25,7 +25,7 @@ const FormLogin = () => {
   const handleSubmitLogin = () => {
     setIsLoading(true)
     const dataReq = {
-      userName: userNameTemp,
+      username: userNameTemp,
       password: passwordTemp
     }
     apiLogin(dataReq)
@@ -34,7 +34,7 @@ const FormLogin = () => {
         router.push(UrlPath.home.url)
 
         setUser({
-          userName: userNameTemp,
+          username: userNameTemp,
           password: passwordTemp
         })
         setAccount({
@@ -43,7 +43,7 @@ const FormLogin = () => {
 
         //luu gia tri id ng dung len cookie
 
-        Cookies.set('userName', userNameTemp, { expires: 7 })
+        Cookies.set('username', userNameTemp, { expires: 7 })
         Cookies.set('role', res.data.role, { expires: 7 })
         Cookies.set('parkingCode', res.data.parkingCode, { expires: 7 })
 
@@ -85,7 +85,7 @@ const FormLogin = () => {
   }
 
   return (
-    <>
+    <>  
       <Spin size="large" spinning={isLoading}>
         <Form
           name="basic"
@@ -158,7 +158,7 @@ const FormLogin = () => {
               }
             ]}
           >
-            <Input
+            <Input  
               value={emailTemp}
               placeholder="Email"
               onBlur={(e) => setEmailTemp(e.target.value)}

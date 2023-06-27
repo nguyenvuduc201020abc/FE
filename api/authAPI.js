@@ -1,6 +1,6 @@
 import { request } from './requet'
 const AdminAuthUrl = {
-  base: '/auth'
+  base: '/login'
 }
 export const apiLogin = (data) => {
   return request({
